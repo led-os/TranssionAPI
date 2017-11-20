@@ -1,0 +1,32 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 22
+        versionCode 1
+        versionName "0.1.20"
+    }
+}
+
+uploadArchives {
+    repositories.mavenDeployer {
+        repository(url: "http://localhost:8081/repository/release/") {
+            authentication(userName: "admin", password: "szgsdtcszg")
+//        repository(url: "http://192.168.2.164:8081/repository/maven-releases/") {
+//            authentication(userName: "admin", password: "szgsdtcszg")
+//        repository(url: "http://192.168.1.76/nexus/content/repositories/releases") {
+//            authentication(userName: "admin", password: "12qw!@!@")
+            pom.groupId = "com.transsion.api"
+            pom.artifactId = "utils"
+            pom.version = android.defaultConfig.versionName
+        }
+    }
+}
+
+dependencies {
+}
