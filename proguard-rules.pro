@@ -15,3 +15,23 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+-keep class com.transsion.api.utils.**{
+    public *;
+}
+
+-keep class com.transsion.api.widget.**{
+    public *;
+}
+
+-keep class com.transsion.api.ApiConstants {
+    public *;
+}
+
+-keep class com.transsion.api.ApiManager$* {
+    public *;
+}
+
+-keep class com.transsion.api.ApiManager {
+    public *;
+}
